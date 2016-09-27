@@ -3,10 +3,10 @@ set -e
 set -x
 
 # Ensure the main and testing repros are present. Needed for runit
-echo "http://alpine.gliderlabs.com/alpine/edge/testing" >> /etc/apk/repositories
+apk add --update-cache --repository "http://alpine.gliderlabs.com/alpine/edge/community" runit
 
 # These packages make it into the final image.
-apk -U add runit python py-setuptools libffi ip6tables ipset iputils iproute2 yajl conntrack-tools
+apk add --update-cache python py-setuptools libffi ip6tables ipset iputils iproute2 yajl conntrack-tools
 
 # These packages are only used for building and get removed.
 apk add --virtual temp python-dev libffi-dev py-pip alpine-sdk curl
