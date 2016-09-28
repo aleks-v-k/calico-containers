@@ -21,6 +21,12 @@ curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bi
 curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/birdcl -o /sbin/birdcl
 chmod +x /sbin/*
 
+# FIXME: pinned version of urllib3 to 1.17, because new one (1.18) breaks
+# etcd connection from nodes. Actually it should be reworked in kuberdock -
+# etcd works fine if it's cert is generated with --domain <master hostname>
+# and this hostname is used in ETCD_AUTHORITY on nodes.
+pip install urllib3==1.17
+
 # Install Felix and libcalico
 pip install git+https://github.com/projectcalico/calico.git@1.4.0b2
 pip install git+https://github.com/projectcalico/libcalico.git@v0.15.0
