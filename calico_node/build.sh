@@ -12,7 +12,8 @@ apk add --update-cache python py-setuptools libffi ip6tables ipset iputils iprou
 apk add --virtual temp python-dev libffi-dev py-pip alpine-sdk curl
 
 # Install Confd
-curl -L https://github.com/projectcalico/confd/releases/download/v0.10.0-scale/confd.static -o /sbin/confd
+# curl -L https://github.com/projectcalico/confd/releases/download/v0.10.0-scale/confd.static -o /sbin/confd
+curl -L https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 -o /sbin/confd
 
 # Copy patched BIRD daemon with tunnel support.
 # curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bird -o /sbin/bird
