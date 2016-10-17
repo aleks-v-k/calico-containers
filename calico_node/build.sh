@@ -44,7 +44,7 @@ chmod +x /sbin/*
 pip install urllib3==1.17
 
 # Install Felix and libcalico
-pip install git+https://github.com/projectcalico/calico.git@1.4.1b2
+pip install git+https://github.com/aleks-v-k/felix.git@1.4.1b2-kd
 pip install git+https://github.com/projectcalico/libcalico.git@v0.17.0
 # Output the python library list
 pip list > libraries.txt
